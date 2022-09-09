@@ -1,0 +1,7 @@
+/target/
+.DS_Store
+Cargo.lock
+.cargo
+/examples/*.bam
+/examples/*.bai
+tmp
