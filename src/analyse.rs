@@ -22,7 +22,7 @@ pub fn analyse(bam_file_path:&str, pos_file_path:&str, out_file_path:&str, check
         	BufWriter::new(Box::new(File::create(path).unwrap()))
 		},
 	};
-	writer.write_all(b"seqid\tstart\tend\tShannon_entropy\tpopulation_nucleotide_diversity\n").unwrap();
+	writer.write_all(b"seqid\tstart\tend\tnum_of_haplotypes\tShannon_entropy\tpopulation_nucleotide_diversity\n").unwrap();
 
 	// loop through the positions, and calculate the diversity metrics
 	for record in pos_reader.records() {
@@ -113,7 +113,7 @@ pub fn analyse(bam_file_path:&str, pos_file_path:&str, out_file_path:&str, check
 			eprintln!("num_unique_haplotypes: {:?}", num_unique_haplotypes); 
 			eprintln!("Population nucleotide diversity: {:?}", hpi); 
 		}
-		writer.write_fmt(format_args!("{}\t{}\n", hs, hpi));
+		writer.write_fmt(format_args!("{}\t{}\t{}\n", num_unique_haplotypes, hs, hpi));
 
 	}
 

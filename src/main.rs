@@ -32,7 +32,7 @@ fn main() {
         )
         .arg(
             arg!(
-                -v --verbose "Add this flap to also print text results to stderr."
+                -v --verbose "Add this flag to also print text results to stderr."
             )
             .required(false)
             .display_order(4)

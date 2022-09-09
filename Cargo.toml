@@ -2,7 +2,7 @@
 name = "epitope_diversity"
 description = "A tool for estimating epitope diversity of specific regions from a NGS alignment, written in Rust."
 repository = "https://github.com/Koohoko/epitope_diversity"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

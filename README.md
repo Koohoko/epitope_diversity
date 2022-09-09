@@ -52,4 +52,6 @@ The calculation is based on the formula in [this paper](https://www.sciencedirec
 ![Shannon entropy](https://ars.els-cdn.com/content/image/1-s2.0-S004268221630037X-fx4_lrg.jpg)
 ![Population nucleotide diversity](https://ars.els-cdn.com/content/image/1-s2.0-S004268221630037X-fx9_lrg.jpg)
 
+### Changelog
+- v0.1.1 add a column in the output file for number of haplotypes.
 ---
