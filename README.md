@@ -1,6 +1,6 @@
 ## epitope_diversity
 
-This tool is used to calculate the diversity of specific epitope population within a NGS sample. It accepts a alignment BAM file as input and returns Shannon entropy and nucleotide diversity of specified genomic regions.
+This tool is used to calculate the diversity of specific epitope population **at haplotype levels** within a NGS sample. It accepts a alignment BAM file as input and returns Shannon entropy and nucleotide diversity of specified genomic regions. The application of this tool can be extended to any genomic regions, not only for immunological epitopes. Written in Rust, fast-running and memory-efficient.
 
 ### Usage
 ```
@@ -38,12 +38,18 @@ A_NP    10      1110    No haplotype    No haplotype
 ```
 
 ### Installation
-#### Executable
+#### 1. Executable
 Directly download executables from [Releases](https://github.com/Koohoko/epitope_diversity/releases).
-#### Install from source
+#### 2. Install from source
 1. Install Rust from [here](https://www.rust-lang.org/tools/install).
 2. Download source code by `git clone https://github.com/Koohoko/epitope_diversity.git`.
 3. Install with `cargo install --path epitope_diversity`.
 4. You are ready to go.
+
+### Details
+The calculation is based on the formula in [this paper](https://www.sciencedirect.com/science/article/pii/S004268221630037X). Specifically, we used the excat "Shannon entropy" and "Population nucleotide diversity" without normalization/correction in that paper.
+
+![Shannon entropy](https://ars.els-cdn.com/content/image/1-s2.0-S004268221630037X-fx4_lrg.jpg)
+![Population nucleotide diversity](https://ars.els-cdn.com/content/image/1-s2.0-S004268221630037X-fx9_lrg.jpg)
 
 ---
