@@ -58,5 +58,5 @@ The calculation is based on the formula in [this paper](https://www.sciencedirec
 - v0.1.1 add columns in the output file for number of haplotypes, and number of total full-cover reads.
 
 ### TODO
-[ ] None
+* [ ] None
 ---
