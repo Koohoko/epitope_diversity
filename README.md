@@ -33,10 +33,10 @@ Please check [here](/examples/). These example data are retrieved from test file
 ```
 epitope_diversity -f ./examples/A_NP.bam -p "./examples/example.gff" -o -
 
-seqid   start   end     num_of_haplotypes       Shannon_entropy population_nucleotide_diversity
-A_NP    1096    1112    10      1.924832680792314       0.0240846338535414
-A_NP    100     120     8       2.216917186688699       0.022321428571428572
-A_NP    10      1110    No haplotype    No haplotype
+seqid   start   end     num_of_full_cover_reads num_of_haplotypes    Shannon_entropy population_nucleotide_diversity
+A_NP    1096    1112    28      10      1.924832680792314    0.024084633853541412
+A_NP    100     120     16      8       2.216917186688699    0.022321428571428572
+A_NP    10      1110    No haplotype    No haplotypeNo haplotype
 ```
 
 ### Installation
@@ -55,5 +55,8 @@ The calculation is based on the formula in [this paper](https://www.sciencedirec
 ![Population nucleotide diversity](https://ars.els-cdn.com/content/image/1-s2.0-S004268221630037X-fx9_lrg.jpg)
 
 ### Changelog
-- v0.1.1 add a column in the output file for number of haplotypes.
+- v0.1.1 add columns in the output file for number of haplotypes, and number of total full-cover reads.
+
+### TODO
+[ ] None
 ---

@@ -22,7 +22,7 @@ pub fn analyse(bam_file_path:&str, pos_file_path:&str, out_file_path:&str, check
         	BufWriter::new(Box::new(File::create(path).unwrap()))
 		},
 	};
-	writer.write_all(b"seqid\tstart\tend\tnum_of_haplotypes\tShannon_entropy\tpopulation_nucleotide_diversity\n").unwrap();
+	writer.write_all(b"seqid\tstart\tend\tnum_of_full_cover_reads\tnum_of_haplotypes\tShannon_entropy\tpopulation_nucleotide_diversity\n").unwrap();
 
 	// loop through the positions, and calculate the diversity metrics
 	for record in pos_reader.records() {
@@ -86,7 +86,7 @@ pub fn analyse(bam_file_path:&str, pos_file_path:&str, out_file_path:&str, check
 		// https://www.sciencedirect.com/science/article/pii/S004268221630037X
 		let num_unique_haplotypes = hap_p_vec.len();
 		if num_unique_haplotypes == 0 { 
-			writer.write_fmt(format_args!("{0}\t{0}\n", "No haplotype"));
+			writer.write_fmt(format_args!("{0}\t{0}\t{0}\n", "No haplotype"));
 			continue;
 		}
 		let epitope_len = hap_p_vec[1].0.len();
@@ -110,10 +110,11 @@ pub fn analyse(bam_file_path:&str, pos_file_path:&str, out_file_path:&str, check
 		hpi = hpi/(epitope_len as f64);
 
 		if check_verbose{
+			eprintln!("tnum_of_full_cover_reads: {:?}", total_hap_counts); 
 			eprintln!("num_unique_haplotypes: {:?}", num_unique_haplotypes); 
 			eprintln!("Population nucleotide diversity: {:?}", hpi); 
 		}
-		writer.write_fmt(format_args!("{}\t{}\t{}\n", num_unique_haplotypes, hs, hpi));
+		writer.write_fmt(format_args!("{}\t{}\t{}\t{}\n", total_hap_counts, num_unique_haplotypes, hs, hpi));
 
 	}
 
