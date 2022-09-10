@@ -1,12 +1,12 @@
 ## epitope_diversity
 
-This tool is used to calculate the diversity of specific epitope population **at haplotype levels** within a NGS sample. It accepts a alignment BAM file as input and returns Shannon entropy and nucleotide diversity of specified genomic regions. The application of this tool can be extended to any genomic regions, not only for immunological epitopes. Written in Rust, fast-running and memory-efficient.
+This tool can calculate the diversity (e.g. [Shannon entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) and [nucleotide diversity](https://en.wikipedia.org/wiki/Nucleotide_diversity)) **at haplotype level** within a specifed region (e.g. epitope) from a NGS sample. It accepts a alignment BAM file, and a GFF3 file as input and returns a tsv result. The application of this tool can be extended to any genomic regions, not only for immunological epitopes. Written in Rust, fast-running and memory-efficient.
 
 ### Usage
 ```
-epitope_diversity 0.1.0
+epitope_diversity 0.1.1
 Haogao Gu <koohoko@gmail.com>
-A tool for estimating epitope diversity of specific regions from a NGS alignment, written in Rust.
+A tool for estimating haplotype diversity of specific regions (e.g. epitopes) from a NGS alignment.
 
 USAGE:
     epitope_diversity [OPTIONS] --bam_file <FILE> --pos_file <FILE>
@@ -14,27 +14,28 @@ USAGE:
 OPTIONS:
     -f, --bam_file <FILE>      Path of BAM file. Must be accompanied with the BAI index file in the
                                same directory.
-    -p, --pos_file <FILE>      Path to a GFF3 file
-                               (https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md)
-                               specifying genomic positions of interest. Start/End positions should
-                               be 1-based rather than 0-based, and should correspond to the
-                               positions in the reference sequence used in SAM/BAM alignment.
+    -p, --pos_file <FILE>      Path to a GFF3 file specifying genomic positions of interest.
+                               Start/End positions should be 1-based rather than 0-based, and should
+                               correspond to the positions in the reference sequence used in SAM/BAM
+                               alignment.
     -o, --out_file <NUMBER>    Path to write to the outfile, if "-" will write to stdout. [default:
                                -]
-    -v, --verbose              Add this flap to also print text results to stderr.
+    -v, --verbose              Add this flag to also print text results to stderr.
     -h, --help                 Print help information
     -V, --version              Print version information
 ```
 
 ### Examples:
+#### Example input files canbe found [here](/examples/). These example data are retrieved from test files from [IRMA](https://wonder.cdc.gov/amd/flu/irma/).
+
+#### Example command and example output
 ```
 epitope_diversity -f ./examples/A_NP.bam -p "./examples/example.gff" -o -
 
-seqid   start   end     Shannon_entropy population_nucleotide_diversity
-A_NP    1096    1112    0.9432729241850654      0.008239030777416173
-A_NP    100     120     0.34073390040305973     0.001586620825134043
+seqid   start   end     num_of_haplotypes       Shannon_entropy population_nucleotide_diversity
+A_NP    1096    1112    10      1.924832680792314       0.0240846338535414
+A_NP    100     120     8       2.216917186688699       0.022321428571428572
 A_NP    10      1110    No haplotype    No haplotype
-
 ```
 
 ### Installation

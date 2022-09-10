@@ -17,7 +17,7 @@ fn main() {
         )
         .arg(
             arg!(
-                -p --pos_file  <FILE> "Path to a GFF3 file (https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md) specifying genomic positions of interest. Start/End positions should be 1-based rather than 0-based, and should correspond to the positions in the reference sequence used in SAM/BAM alignment."
+                -p --pos_file  <FILE> "Path to a GFF3 file specifying genomic positions of interest. Start/End positions should be 1-based rather than 0-based, and should correspond to the positions in the reference sequence used in SAM/BAM alignment."
             )
             .required(true)
             .display_order(2)

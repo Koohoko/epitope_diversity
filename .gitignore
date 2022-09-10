@@ -2,6 +2,6 @@
 .DS_Store
 Cargo.lock
 .cargo
-/examples/*.bam
-/examples/*.bai
+# /examples/*.bam
+# /examples/*.bai
 tmp

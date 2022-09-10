@@ -1,6 +1,6 @@
 [package]
 name = "epitope_diversity"
-description = "A tool for estimating epitope diversity of specific regions from a NGS alignment, written in Rust."
+description = "A tool for estimating haplotype diversity of specific regions (e.g. epitopes) from a NGS alignment."
 repository = "https://github.com/Koohoko/epitope_diversity"
 version = "0.1.1"
 edition = "2021"
