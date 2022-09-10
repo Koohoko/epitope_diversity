@@ -26,7 +26,8 @@ OPTIONS:
 ```
 
 ### Examples:
-#### Example input files canbe found [here](/examples/). These example data are retrieved from test files from [IRMA](https://wonder.cdc.gov/amd/flu/irma/).
+#### Example input files 
+Please check [here](/examples/). These example data are retrieved from test files from [IRMA](https://wonder.cdc.gov/amd/flu/irma/).
 
 #### Example command and example output
 ```
