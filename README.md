@@ -1,6 +1,6 @@
 ## epitope_diversity
 
-This tool can calculate the diversity (e.g. [Shannon entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) and [nucleotide diversity](https://en.wikipedia.org/wiki/Nucleotide_diversity)) **at haplotype level** within a specifed region (e.g. epitope) from a NGS sample. It accepts a alignment BAM file, and a GFF3 file as input and returns a tsv result. The application of this tool can be extended to any genomic regions, not only for immunological epitopes. Written in Rust, fast-running and memory-efficient.
+This tool can calculate the diversity (e.g. [Shannon entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) and [nucleotide diversity](https://en.wikipedia.org/wiki/Nucleotide_diversity)) **at haplotype level** within a specifed region (e.g. epitope) from a NGS sample. It accepts a alignment BAM file, and a GFF3 file as input and returns a tsv result. The application of this tool can be extended to any genomic regions, not only for immune epitopes. Written in Rust, presumably fast-running and memory-efficient.
 
 ### Usage
 ```
