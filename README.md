@@ -49,7 +49,9 @@ Directly download executables from [Releases](https://github.com/Koohoko/epitope
 4. You are ready to go.
 
 ### Details
-The calculation is based on the formula in [this paper](https://www.sciencedirect.com/science/article/pii/S004268221630037X). Specifically, we used the excat "Shannon entropy" and "Population nucleotide diversity" without normalization/correction in that paper.
+Description of the methods can be found in this [blog post](https://koohoko.github.io/posts/2022-09-10/epitope-diversity).
+
+Specifically, we used the excat "Shannon entropy" and "Population nucleotide diversity" without normalization/correction in [this paper](https://www.sciencedirect.com/science/article/pii/S004268221630037X), where
 
 ![Shannon entropy](https://ars.els-cdn.com/content/image/1-s2.0-S004268221630037X-fx4_lrg.jpg)
 ![Population nucleotide diversity](https://ars.els-cdn.com/content/image/1-s2.0-S004268221630037X-fx9_lrg.jpg)
