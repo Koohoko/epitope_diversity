@@ -110,7 +110,7 @@ pub fn analyse(bam_file_path:&str, pos_file_path:&str, out_file_path:&str, check
 		hpi = hpi/(epitope_len as f64);
 
 		if check_verbose{
-			eprintln!("tnum_of_full_cover_reads: {:?}", total_hap_counts); 
+			eprintln!("num_of_full_cover_reads: {:?}", total_hap_counts); 
 			eprintln!("num_unique_haplotypes: {:?}", num_unique_haplotypes); 
 			eprintln!("Population nucleotide diversity: {:?}", hpi); 
 		}

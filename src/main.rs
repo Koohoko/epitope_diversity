@@ -24,7 +24,7 @@ fn main() {
         )
         .arg(
             arg!(
-                -o --out_file <NUMBER> "Path to write to the outfile, if \"-\" will write to stdout."
+                -o --out_file <FILE> "Path to write to the outfile, if \"-\" will write to stdout."
             )
             .required(false)
             .default_value("-")
@@ -47,10 +47,10 @@ fn main() {
     if check_verbose {eprintln!("{}", "### Job started! ###\n")};
 
     let bam_file_path = matches.value_of("bam_file").unwrap();
-    if check_verbose {eprintln!("fasta file: {}", bam_file_path)};
+    if check_verbose {eprintln!("bam file: {}", bam_file_path)};
 
     let pos_file_path = matches.value_of("pos_file").expect("wrong value from pos_file");
-    if check_verbose {eprintln!("Output file: {}", pos_file_path)};
+    if check_verbose {eprintln!("pos file: {}", pos_file_path)};
 
     let mut out_file_path = "-";
     if let Some(file_path_output) = matches.value_of("out_file") {
